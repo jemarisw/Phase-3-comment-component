@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="/style.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Build a Reusable Comment Component</title>
+  </head>
+  <body>
+    <div class="container">
+      <form action="" id="form-main">
+        <fieldset>
+          <label for="name">Name </label>
+          <input
+            type="text"
+            id="name"
+            name="name"
+            class="input-grp"
+            maxlength="20"
+            required
+          />
+        </fieldset>
+
+        <fieldset>
+          <label for="email">Email </label>
+          <input
+            type="email"
+            id="email"
+            name="email"
+            class="input-grp"
+            required
+          />
+        </fieldset>
+
+        <fieldset>
+          <label for="comments">Comments</label>
+          <textarea
+            type="text"
+            id="comments"
+            name="comments"
+            class="input-grp"
+            rows="5"
+            cols="50"
+            maxlength="250"
+            required
+          ></textarea>
+        </fieldset>
+
+        <button type="submit" id="btn" aria-labelledby="Submit Button">
+          
+          Submit
+        </button>
+      </form>
+
+      <reusable-comment
+        id="rc"
+        avatar="https://randomuser.me/api/portraits/women/40.jpg"
+        name="Tawny Smith"
+        email="ts@gmail.com"
+        cmts="hello, is it me your looking for?"
+      >
+        <div slot="fulln"></div>
+        <div slot="em"></div>
+        <div slot="response"></div>
+      </reusable-comment>
+
+      <reusable-comment
+        id="rc"
+        avatar="https://randomuser.me/api/portraits/men/40.jpg"
+        name="Lawny Triumph"
+        email="twivel@gmail.com"
+        cmts="hello, is it me your looking for?"
+      >
+        <!-- <div slot="fulln">Name:</div>
+        <div slot="em">Email:</div>
+        <div slot="response">Response:</div> -->
+      </reusable-comment>
+    </div>
+    <script type="module" src="/main.js"></script>
+  </body>
+</html>
